@@ -8,6 +8,7 @@ Object means a real-world entity such as a pen, chair, table, computer, watch, e
 - Polymorphism
 - Abstraction
 - Encapsulation
+![jvm-architecture](https://github.com/prakhar531/Interview-prep/assets/139108232/40f968b8-1240-4e7d-af7e-35cac2f05d5a)
 
 The main aim of object-oriented programming is to implement real-world entities.
 
