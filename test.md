@@ -22,7 +22,7 @@ An object has three characteristics:
 - **Behavior**: represents the behavior (functionality) of an object such as deposit, withdraw, etc.
 - **Identity**: An object identity is typically implemented via a unique ID. The value of the ID is not visible to the external user. However, it is used internally by the JVM to identify each object uniquely.
 
-<https://static.javatpoint.com/images/jdk2.png>
+(https://static.javatpoint.com/images/jdk2.png)
 
 An object is an instance of a class. A class is a template or blueprint from which objects are created.
 
