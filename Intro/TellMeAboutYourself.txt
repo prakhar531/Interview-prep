@@ -1,0 +1,12 @@
+Good Morning sir,
+ThankYou for giving me this opportunity.
+
+My name is Prakhar Arya, and I come from Bihar. I completed my 12th grade from GGPS Bokaro and my 10th grade PTJMSVM Rajgir. Currently, I'm pursuing a Bachelor's in computer science from BMSIT.
+
+Now Talking about my Technical Skills, I'm a full stack developer, which means I work on both the frontend and backend of web development. In frontend, I'm proficient in React, JavaScript, HTML, and CSS and For the backend, I'm proficient in the MERN stack, which includes MongoDB, Express.js, React.js, and Node.js. Additionally, I'm familiar with the latest framework, Next.js14. I also have a strong foundation in Data Structures and Algorithms, which helps me solve problems efficiently.
+
+I have made multiple projects based on MERN stack and Nestjs.
+
+Now talking about my strengths i am hardworking,  positive-minded, quick learner, multitasking and always look forward to learn and explore new technologies.
+As for my weaknesses, i am introvert person and a overthinker.
+
