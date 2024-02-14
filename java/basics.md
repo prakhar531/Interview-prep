@@ -33,4 +33,5 @@ Any hardware or software environment in which a program runs, is known as a plat
 ### Compiler and Interpreter
 
 C++ uses compiler only. C++ is compiled and run using the compiler which converts source code into machine code so, C++ is platform dependent.
-Java uses both compiler and interpreter. Java source code is converted into bytecode at compilation time. The interpreter executes this bytecode at runtime and produces output. Java is interpreted that is why it is platform-independent.
+
+Java uses both **compiler** and **interpreter**. Java source code is converted into bytecode at compilation time. The interpreter executes this bytecode at runtime and produces output. Java is interpreted that is why it is platform-independent.
