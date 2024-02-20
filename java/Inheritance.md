@@ -22,8 +22,7 @@ Inheritance represents the IS-A relationship which is also known as a parent-chi
         class Subclass-name extends Superclass-name
         {
         //methods and fields
-
-}
+    }
 
 The extends keyword indicates that you are making a new class that derives from an existing class. The meaning of "extends" is to increase the functionality.
 
@@ -53,17 +52,18 @@ In java programming, multiple and hybrid inheritance is supported through interf
 When a class inherits another class, it is known as a single inheritance. .
 
         class Animal{
-        void eat(){System.out.println("eating...");}
+            void eat(){System.out.println("eating...");}
         }
         class Dog extends Animal{
-        void bark(){System.out.println("barking...");}
+            void bark(){System.out.println("barking...");}
         }
         class TestInheritance{
-        public static void main(String args[]){
-        Dog d=new Dog();
-        d.bark();
-        d.eat();
-        }}
+            public static void main(String args[]){
+                Dog d=new Dog();
+                d.bark();
+                d.eat();
+            }
+        }
 
 Output:
 barking...
@@ -74,21 +74,22 @@ eating...
 When there is a chain of inheritance, it is known as multilevel inheritance. As you can see in the example given below, BabyDog class inherits the Dog class which again inherits the Animal class, so there is a multilevel inheritance.
 
         class Animal{
-        void eat(){System.out.println("eating...");}
+            void eat(){System.out.println("eating...");}
         }
         class Dog extends Animal{
-        void bark(){System.out.println("barking...");}
+            void bark(){System.out.println("barking...");}
         }
         class BabyDog extends Dog{
-        void weep(){System.out.println("weeping...");}
+            void weep(){System.out.println("weeping...");}
         }
         class TestInheritance2{
-        public static void main(String args[]){
-        BabyDog d=new BabyDog();
-        d.weep();
-        d.bark();
-        d.eat();
-        }}
+            public static void main(String args[]){
+                BabyDog d=new BabyDog();
+                d.weep();
+                d.bark();
+                d.eat();
+            }
+        }
 
 Output:
 weeping...
@@ -100,20 +101,20 @@ eating...
 When two or more classes inherits a single class, it is known as hierarchical inheritance. In the example given below, Dog and Cat classes inherits the Animal class, so there is hierarchical inheritance.
 
         class Animal{
-        void eat(){System.out.println("eating...");}
+            void eat(){System.out.println("eating...");}
         }
         class Dog extends Animal{
-        void bark(){System.out.println("barking...");}
+            void bark(){System.out.println("barking...");}
         }
         class Cat extends Animal{
-        void meow(){System.out.println("meowing...");}
+            void meow(){System.out.println("meowing...");}
         }
         class TestInheritance3{
-        public static void main(String args[]){
-        Cat c=new Cat();
-        c.meow();
-        c.eat();
-        //c.bark();//C.T.Error
+            public static void main(String args[]){
+                Cat c=new Cat();
+                c.meow();
+                c.eat();
+                //c.bark();//C.T.Error
         }}
 
 Output:
