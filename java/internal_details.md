@@ -30,14 +30,16 @@ The JVM performs the following main tasks:
 - It is the implementation of JVM.
 - It physically exists.
 - It contains a set of libraries + other files that JVM uses at runtime.
-  <https://static.javatpoint.com/images/jre2.png>
+  
+![jre2](https://github.com/prakhar531/Interview-prep/assets/139108232/e147944b-25e5-4be9-85c4-ee78770bcff3)
 
 - The implementation of JVM is also actively released by other companies besides Sun Micro Systems.
 
 ## JDK(Java Development Kit)
 
 - The Java Development Kit (JDK) is a software development environment which is used to develop Java applications and applets. It physically exists. It contains JRE + development tools.
-  <https://static.javatpoint.com/images/jdk2.png>
+  
+![jdk2](https://github.com/prakhar531/Interview-prep/assets/139108232/cb6d3153-d61d-438f-ad59-554b6b4e73d6)
 
 JDK is an implementation of any one of the below given Java Platforms released by Oracle Corporation:
 
