@@ -44,8 +44,8 @@ On the basis of class, there can be three types of inheritance in java: single, 
 
 In java programming, multiple and hybrid inheritance is supported through interface only. We will learn about interfaces later.
 
-![alt text](/assets/typesofinheritance-1.png)
-![alt text](/assets/multiple.jpg)
+![alt text](./assets/typesofinheritance-1.png)
+![alt text](./assets/multiple.jpg)
 
 ## Single Inheritance Example
 
