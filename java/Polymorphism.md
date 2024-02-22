@@ -3,14 +3,21 @@
 Polymorphism in Java is a concept by which we can perform a **single action in different ways**.
 Polymorphism is derived from 2 Greek words: poly and morphs. The word "poly" means many and "morphs" means forms. So polymorphism means many forms.
 
-### There are two types of polymorphism in Java
+We can perform polymorphism in java by **method overloading** and **method overriding**.
+
+If you overload a static method in Java, it is the example of compile time polymorphism.
+
+## There are two types of polymorphism in Java
 
 - compile-time polymorphism
 - runtime polymorphism
 
-We can perform polymorphism in java by **method overloading** and **method overriding**.
+![alt text](./assets/polymorphism.png)
 
-If you overload a static method in Java, it is the example of compile time polymorphism.
+## Compile-Time Polymorphism
+
+Compile time polymorphism, also known as static polymorphism or early binding is the type of polymorphism where the binding of the call to its code is done at the compile time.
+**Method overloading or operator overloading** are examples of compile-time polymorphism.
 
 ## Runtime Polymorphism
 
@@ -24,9 +31,11 @@ Let's first understand the upcasting before Runtime Polymorphism.
 
 If the reference variable of Parent class refers to the object of Child class, it is known as upcasting. For example:
 
+    ```java
     class A{}
     class B extends A{}
     A a=new B();//upcasting
+    ```
 
 ![alt text](./assets/java-upcasting.png)
 
@@ -36,17 +45,19 @@ In this example, we are creating two classes Bike and Splendor. Splendor class e
 
 Since method invocation is determined by the JVM not compiler, it is known as runtime polymorphism.
 
+    ```java
     class Bike{
         void run(){System.out.println("running");}
     }
     class Splendor extends Bike{
-        void run(){System.out.println("running safely with 60km");}
+        void run(){System.out.println("running safely with 60km");
+    }
 
     public static void main(String args[]){
         Bike b = new Splendor();//upcasting
         b.run();
     }
-    }
+    ```
 
 Output:
 
@@ -57,29 +68,28 @@ running safely with 60km.
 - **Definition:** A class having multiple methods with the same name but different parameters.
 - **Purpose:** Enhances code readability by using the same method name for related operations.
 
-**## Advantages:**
+**Advantages:**
 
 - Improved code readability and maintainability.
 
-**## Ways to Overload Methods:**
+### Ways to Overload Methods
 
-1. **Changing Number of Arguments:**
+1.  **Changing Number of Arguments:**
 
-   ```java
-   class Adder {
-       static int add(int a, int b) { return a + b; }
-       static int add(int a, int b, int c) { return a + b + c; }
-   }
-   ```
+        ```java
+        class Adder {
+            static int add(int a, int b) { return a + b; }
+            static int add(int a, int b, int c) { return a + b + c; }
+        }```
 
-2. **Changing Data Type of Arguments:**
+2.  **Changing Data Type of Arguments:**
 
-   ```java
-   class Adder {
-       static int add(int a, int b) { return a + b; }
-       static double add(double a, double b) { return a + b; }
-   }
-   ```
+        ```java
+        class Adder {
+            static int add(int a, int b) { return a + b; }
+            static double add(double a, double b) { return a + b; }
+        }
+        ```
 
 **## Not Possible by Changing Return Type Only:**
 
@@ -110,7 +120,8 @@ In other words, If a subclass provides the specific implementation of the method
 - Method overriding is used to provide the specific implementation of a method which is already provided by its superclass.
 - Method overriding is used for runtime polymorphism
 
-  ```//Creating a parent class.
+  ```java
+  //Creating a parent class.
   class Vehicle{
   //defining a method
   void run(){System.out.println("Vehicle is running");}
@@ -134,6 +145,12 @@ No, a static method cannot be overridden. It can be proved by runtime polymorphi
 
 No, because the main is a static method.
 
+## What is the difference between overloading and overriding?
+
+A compile-time polymorphism feature called overloading allows an entity to have numerous implementations of the same name. Method overloading and operator overloading are two examples.
+
+Overriding is a form of runtime polymorphism where an entity with the same name but a different implementation is executed. It is implemented with the help of virtual functions.
+
 ## Super Keyword in Java
 
 The super keyword in Java is a reference variable which is used to refer immediate parent class object.
@@ -150,7 +167,8 @@ Whenever you create the instance of subclass, an instance of parent class is cre
 
 We can use super keyword to access the data member or field of parent class. It is used if parent class and child class have same fields.
 
-````class Animal{
+````java
+    class Animal{
         String color="white";
     }
 
@@ -175,6 +193,7 @@ We can use super keyword to access the data member or field of parent class. It 
 
 It should be used if subclass contains the same method as parent class. In other words, it is used if method is overridden.
 
+    ```java
     class Animal{
         void eat(){System.out.println("eating...");}
     }
@@ -194,6 +213,7 @@ It should be used if subclass contains the same method as parent class. In other
             d.work();
         }
     }
+    ```
 
 Output:
 eating...
@@ -207,6 +227,7 @@ To call the parent class method, we need to use super keyword.
 
 The super keyword can also be used to invoke the parent class constructor. Let's see a simple example:
 
+    ```java
     class Animal{
         Animal(){System.out.println("animal is created");}
     }
@@ -222,6 +243,7 @@ The super keyword can also be used to invoke the parent class constructor. Let's
         }
     }
 
+```
 Output:
 
 animal is created
@@ -242,3 +264,4 @@ If you make any method as final, you cannot override it.
 
 **Java final class**
 If you make any class as final, you cannot extend it.
+```

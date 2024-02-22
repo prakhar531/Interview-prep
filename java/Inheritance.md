@@ -21,14 +21,17 @@ Inheritance represents the IS-A relationship which is also known as a parent-chi
 
 ### The syntax of Java Inheritance
 
+        ```java
         class Subclass-name extends Superclass-name
         {
         //methods and fields
-    }
+        }
+        ```
 
 The extends keyword indicates that you are making a new class that derives from an existing class. The meaning of "extends" is to increase the functionality.
 
-        class Employee{
+        ```java
+            class Employee{
             float salary=40000;
         }
         class Programmer extends Employee{
@@ -39,6 +42,7 @@ The extends keyword indicates that you are making a new class that derives from 
                 System.out.println("Bonus of Programmer is:"+p.bonus);
             }
         }
+        ```
 
 ### Types of inheritance in java
 
@@ -53,6 +57,7 @@ In java programming, multiple and hybrid inheritance is supported through interf
 
 When a class inherits another class, it is known as a single inheritance. .
 
+        ```java
         class Animal{
             void eat(){System.out.println("eating...");}
         }
@@ -66,6 +71,7 @@ When a class inherits another class, it is known as a single inheritance. .
                 d.eat();
             }
         }
+        ```
 
 Output:
 barking...
@@ -75,6 +81,7 @@ eating...
 
 When there is a chain of inheritance, it is known as multilevel inheritance. As you can see in the example given below, BabyDog class inherits the Dog class which again inherits the Animal class, so there is a multilevel inheritance.
 
+        ```java
         class Animal{
             void eat(){System.out.println("eating...");}
         }
@@ -92,6 +99,7 @@ When there is a chain of inheritance, it is known as multilevel inheritance. As 
                 d.eat();
             }
         }
+        ```
 
 Output:
 weeping...
@@ -117,11 +125,12 @@ When two or more classes inherits a single class, it is known as hierarchical in
                 c.meow();
                 c.eat();
                 //c.bark();//C.T.Error
-        }}
+            }
+        }
 
-Output:
-meowing...
-eating...
+    Output
+    meowing...
+    eating...
 
 ### Why multiple inheritance is not supported in java?
 
@@ -137,12 +146,14 @@ If a class have an entity reference, it is known as Aggregation. Aggregation rep
 
 Consider a situation, Employee object contains many informations such as id, name, emailId etc. It contains one more object named address, which contains its own informations such as city, state, country, zipcode etc. as given below.
 
+    ```java
     class Employee{
         int id;
         String name;
         Address address;//Address is a class
         ...
     }
+    ```
 
 In such case, Employee has an entity reference address, so relationship is Employee **HAS-A** address.
 
@@ -151,44 +162,45 @@ In such case, Employee has an entity reference address, so relationship is Emplo
 - Code reuse is also best achieved by aggregation when there is no is-a relationship.
 - Inheritance should be used only if the relationship is-a is maintained throughout the lifetime of the objects involved; otherwise, aggregation is the best choice.
 
-  public class Address {
-  String city,state,country;
-  public Address(String city, String state, String country) {
-  this.city = city;
-  this.state = state;
-  this.country = country;
-  }
-  }
+        ```java
+        public class Address {
+        String city,state,country;
+        public Address(String city, String state, String country) {
+        this.city = city;
+        this.state = state;
+        this.country = country;
+        }
+        }
 
-  public class Emp {  
-   int id;  
-   String name;  
-   Address address;
+        public class Emp {
+        int id;
+        String name;
+        Address address;
 
-  public Emp(int id, String name,Address address) {  
-   this.id = id;  
-   this.name = name;  
-   this.address=address;  
-   }
+        public Emp(int id, String name,Address address) {
+        this.id = id;
+        this.name = name;
+        this.address=address;
+        }
 
-  void display(){  
-   System.out.println(id+" "+name);  
-   System.out.println(address.city+" "+address.state+" "+address.country);  
-   }
+        void display(){
+        System.out.println(id+" "+name);
+        System.out.println(address.city+" "+address.state+" "+address.country);
+        }
 
-  public static void main(String[] args) {
-  Address address1=new Address("gzb","UP","india");
-  Address address2=new Address("gno","UP","india");
+        public static void main(String[] args) {
+        Address address1=new Address("gzb","UP","india");
+        Address address2=new Address("gno","UP","india");
 
-        Emp e=new Emp(111,"varun",address1);
-        Emp e2=new Emp(112,"arun",address2);
+                Emp e=new Emp(111,"varun",address1);
+                Emp e2=new Emp(112,"arun",address2);
 
-        e.display();
-        e2.display();
+                e.display();
+                e2.display();
 
-  }
-
-  }
+        }
+        }
+        ```
 
 Output:111 varun
 gzb UP india
