@@ -37,7 +37,7 @@ Example of abstract method
 
 In this example, Bike is an abstract class that contains only one abstract method run. Its implementation is provided by the Honda class.
 
-    ```java
+    ````java
     abstract class Bike{
         abstract void run();
     }
@@ -50,11 +50,11 @@ In this example, Bike is an abstract class that contains only one abstract metho
             obj.run();
         }
     }
-    ```
+    ````
 
 Other Examples:
 
-    ```java
+    ````java
     abstract class Bike{
         Bike(){System.out.println("bike is created");}
         abstract void run();
@@ -73,7 +73,7 @@ Other Examples:
             obj.changeGear();
         }
     }
-    ```
+    ````
 
 ## Interface in Java
 
@@ -138,7 +138,7 @@ A class extends another class, an interface extends another interface, but a cla
 
 ## Multiple inheritance in Java by interface
 
-![alt text](multipleinheritance.jpg)
+![alt text](/assets/multipleinheritance.jpg)
 
 If a class implements multiple interfaces, or an interface extends multiple interfaces, it is known as multiple inheritance.
 
