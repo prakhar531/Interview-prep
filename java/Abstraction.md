@@ -196,13 +196,12 @@ Yes, there are more challenges when you have more authority. Although inheritanc
 
 Both abstract classes and interfaces are special types of classes that just include the declaration of the methods, not their implementation. An abstract class is completely distinct from an interface, though. Following are some major differences between an abstract class and an interface.
 
-| Abstract Class | Interface |
-| -------------- | --------- |
-
-|When an abstract class is inherited, however, the subclass is not required to supply the definition of the abstract method until and unless the subclass actually uses it.| When an interface is implemented, the subclass is required to specify all of the interface’s methods as well as their implementation.|
-|A class that is abstract can have both abstract and non-abstract methods. |An interface can only have abstract methods.|
-|An abstract class can have final, non-final, static and non-static variables. |The interface has only static and final variables.|
-|Abstract class doesn’t support multiple inheritance.| An interface supports multiple inheritance.|
+| Abstract Class                                                                                                                                                             | Interface                                                                                                                             |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| When an abstract class is inherited, however, the subclass is not required to supply the definition of the abstract method until and unless the subclass actually uses it. | When an interface is implemented, the subclass is required to specify all of the interface’s methods as well as their implementation. |
+| A class that is abstract can have both abstract and non-abstract methods.                                                                                                  | An interface can only have abstract methods.                                                                                          |
+| An abstract class can have final, non-final, static and non-static variables.                                                                                              | The interface has only static and final variables.                                                                                    |
+| Abstract class doesn’t support multiple inheritance.                                                                                                                       | An interface supports multiple inheritance.                                                                                           |
 
 ### What are virtual functions?
 
