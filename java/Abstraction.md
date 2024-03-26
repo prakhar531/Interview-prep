@@ -37,7 +37,7 @@ Example of abstract method
 
 In this example, Bike is an abstract class that contains only one abstract method run. Its implementation is provided by the Honda class.
 
-    ````java
+```java
     abstract class Bike{
         abstract void run();
     }
@@ -50,11 +50,11 @@ In this example, Bike is an abstract class that contains only one abstract metho
             obj.run();
         }
     }
-    ````
+```
 
 Other Examples:
 
-    ````java
+```java
     abstract class Bike{
         Bike(){System.out.println("bike is created");}
         abstract void run();
@@ -73,7 +73,7 @@ Other Examples:
             obj.changeGear();
         }
     }
-    ````
+```
 
 ## Interface in Java
 
@@ -103,14 +103,14 @@ An interface is declared by using the interface keyword.
 It provides total abstraction; means all the methods in an interface are **declared with the empty body**, and all the fields are **public, static and final** by default.
 A class that implements an interface **must implement all the methods declared** in the interface.
 
-    ```java
+```java
     interface <interface_name>{
 
         // declare constant fields
         // declare methods that abstract
         // by default.
     }
-    ```
+```
 
 Interface fields are **public, static and final** by default, and the methods are **public and abstract**.
 
@@ -122,7 +122,7 @@ Interface fields are **public, static and final** by default, and the methods ar
 
 A class extends another class, an interface extends another interface, but a class implements an interface.
 
-    ```java
+```java
     interface printable{
         void print();
     }
@@ -134,11 +134,11 @@ A class extends another class, an interface extends another interface, but a cla
             obj.print();
         }
     }
-    ```
+```
 
 ## Multiple inheritance in Java by interface
 
-![alt text](/assets/multipleinheritance.jpg)
+![alt text](./assets/multipleinheritance.jpg)
 
 If a class implements multiple interfaces, or an interface extends multiple interfaces, it is known as multiple inheritance.
 

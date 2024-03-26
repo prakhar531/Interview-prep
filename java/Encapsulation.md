@@ -91,7 +91,7 @@ The access modifiers in Java specifies the accessibility or scope of a field, me
 
 3. **Protected**: The access level of a protected modifier is within the package and outside the package through child class. If you do not make the child class, it cannot be accessed from outside the package.
 
-   ````java
+````java
 
    package pack;
    public class A{
@@ -110,7 +110,7 @@ The access modifiers in Java specifies the accessibility or scope of a field, me
    }  ```
    Output:Hello
 
-   ````
+````
 
 4. **Public**: The access level of a public modifier is everywhere. It can be accessed from within the class, outside the class, within the package and outside the package.
 
