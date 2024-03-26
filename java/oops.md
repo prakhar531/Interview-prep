@@ -153,7 +153,6 @@ It initializes the data members to their default values.
               System.out.println("Constructor with argument is called");
           }
       }
-      ```
 ````
 
 4. **Copy Constructor**
@@ -169,7 +168,6 @@ It initializes the data members to their default values.
               this.rollNo= student.rollNo;
         }
     }
-    ```
 ````
 
 ### What is Garbage Collection(GC)?

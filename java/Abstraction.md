@@ -142,7 +142,7 @@ A class extends another class, an interface extends another interface, but a cla
 
 If a class implements multiple interfaces, or an interface extends multiple interfaces, it is known as multiple inheritance.
 
-    ```java
+```java
     interface Printable{
         void print();
     }
@@ -159,13 +159,13 @@ If a class implements multiple interfaces, or an interface extends multiple inte
             obj.show();
         }
     }
-    ```
+```
 
 **Multiple inheritance is not supported through class in java, but it is possible by an interface, why?**
 
 As we have explained in the inheritance chapter, multiple inheritance is not supported in the case of class because of ambiguity. However, it is supported in case of an interface because there is no ambiguity. It is because its implementation is provided by the implementation class. For example:
 
-    ```java
+```java
     interface Printable{
         void print();
     }
@@ -180,7 +180,7 @@ As we have explained in the inheritance chapter, multiple inheritance is not sup
             obj.print();
         }
     }
-    ```
+```
 
 As you can see in the above example, Printable and Showable interface have same methods but its implementation is provided by class TestTnterface1, so there is no ambiguity.
 
