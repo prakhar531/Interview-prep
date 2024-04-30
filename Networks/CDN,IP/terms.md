@@ -52,7 +52,7 @@ It is very difficult to find out the IP address associated with a website becaus
 The client machine sends a request to the local name server, which, if the root does not find the address in its database, sends a request to the root name server, which in turn, will route the query to a top-level domain (TLD) or authoritative name server. The root name server can also contain some hostName to IP address mappings. The Top-level domain (TLD) server always knows who the authoritative name server is. So finally the IP address is returned to the local name server which in turn returns the IP address to the host
 
 ![alt text](./assets/DNS_3.png)
-![alt text](<./assets/<How-DNS-Works-gif-(1).gif>>)
+![alt text](<./assets/How-DNS-Works-gif-(1).gif>)
 
 To handle subdomain CNAME record are used. for example when user request on blog.piyushgarg.dev it return CNAME of subdomain which is basically name of some other data network such as hashnode.network then it will find A record of hashnode.network and returns it value. It is just like creating a link. We can think of keeping A record of hashnode.network as value of subdomain but if hashnode.network changes its A record then we have to update values here.
 
