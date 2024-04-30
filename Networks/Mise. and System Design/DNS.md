@@ -53,7 +53,7 @@ The client machine sends a request to the local name server, which, if the root 
 
 ![alt text](./assets/DNS_3.png)
 
-Lets say we are requesting to https://geeksforgeeks.org
+Lets say we are requesting to geeksforgeeks.org
 
 ![alt text](<./assets/How-DNS-Works-gif-(1).gif>)
 
