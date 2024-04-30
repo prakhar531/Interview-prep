@@ -52,9 +52,31 @@ It is very difficult to find out the IP address associated with a website becaus
 The client machine sends a request to the local name server, which, if the root does not find the address in its database, sends a request to the root name server, which in turn, will route the query to a top-level domain (TLD) or authoritative name server. The root name server can also contain some hostName to IP address mappings. The Top-level domain (TLD) server always knows who the authoritative name server is. So finally the IP address is returned to the local name server which in turn returns the IP address to the host
 
 ![alt text](./assets/DNS_3.png)
+
+Lets say we are requesting to https://geeksforgeeks.org
+
 ![alt text](<./assets/How-DNS-Works-gif-(1).gif>)
 
-To handle subdomain CNAME record are used. for example when user request on blog.piyushgarg.dev it return CNAME of subdomain which is basically name of some other data network such as hashnode.network then it will find A record of hashnode.network and returns it value. It is just like creating a link. We can think of keeping A record of hashnode.network as value of subdomain but if hashnode.network changes its A record then we have to update values here.
+### DNS Records
 
-NS(Name Server) record give authoritative information of server which is responsible for handling requests.By using NS server we can create our own dns servers.Name server work as:
-if domain has its name server it will return domain or ip of other server. then we have to ask resultant server to get final ip address.
+Domain name, IP address what is the validity? what is the time to live? and all the information related to that domain name. These records are stored in a tree-like structure.
+We’ll go through some of the most common ones you’re likely to encounter.
+
+- **A Record –**
+  For example, 104.26.10.228 is an IPv4 address that these entries resolve to.
+
+- **AAAA Record –**
+  For example, 2506:4700:20::681a:bc6 resolves to an IPv6 address.
+
+- **CNAME Record –**
+  For example, the subdomain name of Geeksforgeeks’s online shop is marketing.geeksforgeeks.org, which gives a CNAME record of marketing.shopify.com. To determine the IP address, another DNS request will be sent to marketing.shopify.com.
+  To handle subdomain CNAME record are used. for example when user request on blog.piyushgarg.dev it return CNAME of subdomain which is basically name of some other data network such as hashnode.network then it will find A record of hashnode.network and returns it value. It is just like creating a link. We can think of keeping A record of hashnode.network as value of subdomain but if hashnode.network changes its A record then we have to update values here.
+
+- **MX Record –**
+  These records point to the servers that handle the email for the domain you are looking for. For example, the MX record response for geeksforgeeks.com would look like alt1.aspmx.l.google.com. There is also a priority sign on these documents. It instructs the client in which order to try the servers. This is useful when the primary server fails and the email needs to be sent to a backup server.
+
+- **TXT Record –**
+  TXT records are text fields that can be used to store any text-based data. TXT records can be used for a variety of things, but one of the most common is to identify the server that has the authorization to send an email on behalf of the domain (this can help in the fight against spam and fake email). is). They can also be used to verify domain ownership when registering for third-party services.
+
+- **NS(Name Server)** record give authoritative information of server which is responsible for handling requests.By using NS server we can create our own dns servers.Name server work as:
+  if domain has its name server it will return domain or ip of other server. then we have to ask resultant server to get final ip address.
