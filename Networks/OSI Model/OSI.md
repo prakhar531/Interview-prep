@@ -4,7 +4,7 @@
 - The OSI reference model was developed by ISO – ‘International Organization for Standardization‘, in the year 1984.
 - It is a 7-layer architecture with each layer having specific functionality to perform. All seven layers that work together to carry out specialized network functions, allowing for a more systematic approach to networking.
 
-![alt text](cn1.png)
+![alt text](../assets/cn1.png)
 
 ## What are the 7 layers of the OSI Model?
 
@@ -25,7 +25,7 @@ The OSI model consists of seven abstraction layers arranged in a top-down order:
 - When receiving data, this layer will get the signal received and convert it into 0s and 1s and send them to the Data Link layer, which will put the frame back together.
 
 Data Bits in the Physical Layer
-![alt text](data-bits.jpg)
+![alt text](../assets/data-bits.jpg)
 
 ### Functions of the Physical Layer
 
@@ -59,7 +59,7 @@ The Receiver’s MAC address is obtained by placing an ARP(Address Resolution Pr
 - Flow Control: The data rate must be constant on both sides else the data may get corrupted thus, flow control coordinates the amount of data that can be sent before receiving an acknowledgment.
 - Access control: When a single communication channel is shared by multiple devices, the MAC sub-layer of the data link layer helps to determine which device has control over the channel at a given time.
 
-![alt text](DatalinkLayer-660x335.jpg)
+![alt text](../assets/DatalinkLayer-660x335.jpg)
 
 **Note:**
 
@@ -92,12 +92,11 @@ The transport layer also provides the acknowledgment of the successful data tran
 **At the sender’s side:** The transport layer receives the formatted data from the upper layers, performs **Segmentation**, and also implements **Flow and error control** to ensure proper data transmission.
 It also adds **Source and Destination port numbers** in its header and forwards the segmented data to the Network Layer.
 
-    Note:
-    *The sender needs to know the port number associated with the receiver’s application.*
+Note:
 
-    *Generally, this destination port number is configured, either by default or manually. For example, when a web application requests a web server, it typically uses port number 80, because this is the default port assigned to web applications. Many applications have default ports assigned.*
-
-    *At the receiver’s side: Transport Layer reads the port number from its header and forwards the Data which it has received to the respective application. It also performs sequencing and reassembling of the segmented data.*
+1. _The sender needs to know the port number associated with the receiver’s application._
+2. _Generally, this destination port number is configured, either by default or manually. For example, when a web application requests a web server, it typically uses port number 80, because this is the default port assigned to web applications. Many applications have default ports assigned._
+3. _At the receiver’s side: Transport Layer reads the port number from its header and forwards the Data which it has received to the respective application. It also performs sequencing and reassembling of the segmented data._
 
 ### Functions of the Transport Layer
 

@@ -26,8 +26,8 @@ After the email reaches the receiver i.e. Zoro, the process will reverse and dec
 
 ## OSI Model in a Nutshell
 
-![alt text](<Screenshot (135).png>)
-![alt text](<Screenshot (136).png>) ![alt text](<Screenshot (135)-1.png>)
+![alt text](<../assets/Screenshot (135).png>)
+![alt text](<../assets/Screenshot (136).png>)
 
 ## OSI vs TCP/IP Model
 

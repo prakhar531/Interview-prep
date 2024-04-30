@@ -35,13 +35,13 @@ In world of internet everything works on IP address. Each device, server and eve
 
 The host requests the DNS name server to resolve the domain name. And the name server returns the IP address corresponding to that domain name to the host so that the host can future connect to that IP address.
 
-![alt text](./assets/DNS_2.png)
+![alt text](../assets/DNS_2.png)
 
 ### Organization of Domain
 
 It is very difficult to find out the IP address associated with a website because there are millions of websites and with all those websites we should be able to generate the IP address immediately, there should not be a lot of delays for that to happen organization of the database is very important.
 
-![alt text](./assets/DNS.png)
+![alt text](../assets/DNS.png)
 
 - **Hierarchy of Name Servers Root name servers:** It is contacted by name servers that can not resolve the name. It contacts the authoritative name server if name mapping is not known. It then gets the mapping and returns the IP address to the host.
 - **Top-level domain (TLD) server:** It is responsible for com, org, edu, etc, and all top-level country domains like uk, fr, ca, in, etc. They have info about authoritative domain servers and know the names and IP addresses of each authoritative name server for the second-level domains.
@@ -51,11 +51,11 @@ It is very difficult to find out the IP address associated with a website becaus
 
 The client machine sends a request to the local name server, which, if the root does not find the address in its database, sends a request to the root name server, which in turn, will route the query to a top-level domain (TLD) or authoritative name server. The root name server can also contain some hostName to IP address mappings. The Top-level domain (TLD) server always knows who the authoritative name server is. So finally the IP address is returned to the local name server which in turn returns the IP address to the host
 
-![alt text](./assets/DNS_3.png)
+![alt text](../assets/DNS_3.png)
 
 Lets say we are requesting to geeksforgeeks.org
 
-![alt text](<./assets/How-DNS-Works-gif-(1).gif>)
+![alt text](<../assets/How-DNS-Works-gif-(1).gif>)
 
 ### DNS Records
 
