@@ -218,3 +218,119 @@ We also discussed three different tables that are use to store different mapping
 - Switches use a MAC Address Table which is a mapping of **Switchports to connected MAC addresses**
 - Routers use a Routing Table which is a mapping of known **Networks to interfaces or next-hop addresses**
 - All L3 devices use an ARP Table which is a mapping of **IP Addresses to MAC addresses**
+
+## Host to Host Communication
+
+After discussing the makeup of the OSI Model and some of the Key Players involved in moving a packet from one host to another, we can finally discuss the specific functions which occur in allowing Host to Host communication.
+
+Since there are no Routers in this illustration, we know all the communication is happening within the same network — therefore, Host A and Host B are both configured with IP addresses that belong to the same network.
+
+![alt text](../assets/packtrav-hth-1.png)
+
+Each host has a unique IP address and MAC address. Since each host is also a L3 device, they each also have an ARP Table. At the moment, their ARP Tables are empty.
+
+Host A starts by generating some Data for Host B. Host A knows the final destination for this data will be the IP address 10.10.10.20 (Host B). Host A also knows its own address (10.10.10.10), and as such is able to create a L3 header with the required Source and Destination IP Address.
+
+But as we learned earlier, packet delivery is the job of Layer 2, so despite these hosts being directly connected to one another, a L2 header must be created.
+
+The Source of the L2 header will be Host A’s MAC address (aaaa.aaaa.aaaa). The Destination of the L2 header should be Host B’s MAC address, but at the moment, Host A doesn’t have an entry in its ARP Table for Host B’s IP address, and therefore, does not know Host B’s MAC address.
+
+As a result, Host A is unable to create the proper L2 header to deliver the packet to Host B’s NIC at this time. Host A will have to initiate an ARP Request in order to acquire the missing information:
+
+![alt text](../assets/packtrav-hth-2-1024x135.png)
+
+The ARP Request is a single packet which essentially asks: **_“If there is someone out there with the IP 10.10.10.20, please send me your MAC address.“_**
+
+Remember, at this point Host A does not know if Host B exists. In fact, Host A does not know that it is directly connected to Host B. Hence, the question is addressed to everyone on the link. The **ARP Request is sent as a Broadcast**, and had there been other hosts connected to this link, they too would have received the ARP Request.
+
+Also note that Host A includes its own MAC address in the ARP Request itself. This allows Host B (if it exists) to easily respond directly back to Host A with the requested information.
+
+![alt text](../assets/packtrav-hth-3-1024x133.png)
+
+Receiving the ARP Request allows Host B to learn something. Namely, that Host A’s IP address is 10.10.10.10 and the correlating MAC address is aaaa.aaaa.aaaa. Notice this entry is now added to Host B’s ARP Table.
+
+Host B can use this new information to respond directly to Host A. The ARP Response is sent as a Unicast message, directly addressed to Host A. Had there been other hosts on this link, they would not have seen the ARP Response.
+
+The ARP Response will include the information Host A requested: The IP Address 10.10.10.20 is being served by the NIC with the MAC address bbbb.bbbb.bbbb. Host A will use this information to populate its ARP Table
+
+![alt text](../assets/packtrav-hth-4-1024x129.png)
+
+With Host A’s ARP Table populated, Host A can now successfully put together the proper L2 header to get the packet to Host B.
+
+When Host B gets the data, it will be able to respond without further ado, since it already has a mapping in its ARP Table for Host A.
+
+## Host to Host through a Switch
+
+In the above discussion, we looked at everything that happens for two hosts to communicate directly with one another. In this discussion, we will add a common network device: a switch. We will take a look at what happens for communication from Host to Host through a Switch.
+
+We will start by looking at the individual switch functions, and then take a look at an animation which shows their collaborative operation.
+
+### Switch Functions
+
+A Switch primarily has four functions: Learning, Flooding, Forwarding, and Filtering.
+
+#### Learning
+
+Being a Layer 2 device, a Switch will make all its decisions based upon information found in the L2 Header. Specifically, a Switch will use the Source MAC address and Destination MAC address to make its forwarding decisions.
+
+One of the goals of the Switch is to create a MAC Address Table, mapping each of its switchports to the MAC address of the connected devices.
+
+The MAC address table starts out empty, and every time a Switch receives anything, it takes a look at the Source MAC address field of the incoming frame. It uses the Source MAC and the switchport the frame was received on to build an entry in the MAC Address Table.
+
+Sooner or later, as each connected device inevitably sends something, the Switch will have a fully populated MAC Address Table. This table can then be used to smartly forward frames to their intended destination.
+
+#### Flooding
+
+However, despite the learning process above, it is unavoidable that a Switch will at some point receive a frame destined to a MAC address of which the Switch does not know the location.
+
+In such cases, the Switch’s only option is to simply duplicate the frame and send it out all ports. This action is known as Flooding.
+
+Flooding assures that if the intended device exists and if it is connected to the switch, it will definitely receive the frame.
+
+Of course, so will every other device connected to that particular Switch. And though not ideal, this is perfectly normal. The NIC of each connected device will receive the frame and take a look at the Destination MAC address field. If they are not the intended recipient, they will simply silently drop the frame.
+
+If they are the intended device, however, then the Switch can rest satisfied knowing it was able to deliver the frame successfully.
+
+Moreover, when the intended device receives the frame, a response will be generated, which when sent to the Switch will allow the switch to learn and create a MAC Address Table mapping that unknown device to its switchport.
+
+#### Forwarding
+
+Ideally, of course, the Switch will have an entry in its MAC Address Table for every Destination MAC it comes across.
+
+When this happens, the Switch happily forwards the frame out the appropriate switchport.
+
+#### Filtering
+
+And finally, the last function of the switch is filtering. Mainly, this function states that a Switch will never forward a frame back out the same port which received the frame.
+
+Most commonly, this happens when a Switch needs to flood a frame — the frame will get duplicated and sent out every switchport except the switchport which received the frame.
+
+### Switch Operation
+
+Now that we’ve looked at each of the individual functions of a Switch, we can look at them in action. The animation below includes a Switch going through all four functions as it processes traffic.
+
+Ordinarily, the hosts in the animation below would need to perform an ARP resolution, but for the sake of focusing on the Switch’s operation, we will omit ARP and proceed as if all the hosts already knew each other’s IP and MAC addresses.
+
+![alt text](../assets/packtrav-host-switch-host.gif)
+
+Host A has “something” to send to Host B. The contents of the “something” is entirely irrelevant, so long as its understood that the frame has a L2 header which includes a Source and Destination MAC address.
+
+Initially, the MAC Address Table of the Switch is empty. Remember, it only gets populated when a frame is received.
+
+When Host A sends the frame to the switch, it includes a Source MAC address of aaaa.aaaa.aaaa. This prompts the Switch to learn a MAC Address Table entry mapping Port 1 to MAC Address aaaa.aaaa.aaaa.
+
+Then, when deciding how to forward the frame, the Switch realizes there is no entry for bbbb.bbbb.bbbb. This leaves the Switch only one option: duplicate and flood the frame out all ports. Notice the frame was duplicated out all ports, except Port 1 (the port it came in on) – this is an example of the Switch performing its filtering function.
+
+This frame will then be received by Host C and Host B. Host C, when inspecting the L2 header will realize the frame is not intended for them and will simply discard it. Conversely, when Host B receives the frame and realizes they indeed are the intended recipient, they will accept the frame and generate a response.
+
+When the response arrives on the Switch, another MAC Address Table mapping can be learned: Port 2 contains the MAC address bbbb.bbbb.bbbb.
+
+Then the Switch looks up the Destination MAC address (aaaa.aaaa.aaaa) and realizes this address exists out Port 1. The Switch can then simply forward the frame, since it knows the location of the Destination MAC address.
+
+#### Broadcasts
+
+**A Broadcast frame is a frame which is addressed to everyone on the local network.** This is done using the same Ethernet header we’ve been discussing, except the **Destination MAC address field is populated with a special address: ffff.ffff.ffff.** The “all F’s” address is specially reserved for the purpose of broadcasting.
+
+By definition, if the Switch ever encounters a packet with a destination MAC of ffff.ffff.ffff, it will always flood the frame (after learning the Source MAC, of course).
+
+In summary, a Broadcast is a frame addressed to everyone on the local network (ffff.ffff.ffff), and Flooding is an action a switch can take. A broadcast frame, by definition, will always be flooded by a switch. But a switch will never broadcast a frame (since broadcasting is not a function of a switch).
