@@ -1,0 +1,90 @@
+# Difference Between HTTP and HTTPS
+
+HTTPS is just HTTP with encryption. The primary distinction between these two names is that HTTPS is more secure than HTTP since it uses TLS (SSL) encryption for all HTTP requests and answers, even the standard ones.
+
+## HyperText Transfer Protocol (HTTP)
+
+- HyperText Transfer Protocol (HTTP) is a protocol using which hypertext is transferred over the Web.
+- Due to its simplicity, HTTP has been the most widely used protocol for data transfer over the Web but the data (i.e. hypertext) exchanged using HTTP isn’t as secure as we would like it to be.
+- In fact, hyper-text exchanged using HTTP goes as plain text i.e. anyone between the browser and server can read it relatively easily if one intercepts this exchange of data.
+- The web server delivers the desired data to the user in the form of web pages when the user initiates an HTTP request through their browser. Above the TCP layer lies an application layer protocol called HTTP. It has given web browsers and servers certain standard principles that they can use to talk to one another.
+- Because each transaction on the HTTP protocol is carried out independently of the others and without reference to the history, the connection between the web browser and the server ends after the transaction is finished. This makes **HTTP a stateless protocol**.
+
+### Advantages of HTTP
+
+- Because there are fewer connections running at once, it delivers reduced CPU and memory utilization.
+- It allows requests and answers to be pipelined via HTTP.
+- Because there are fewer TCP connections, it provides less network congestion.
+- During the first stage of connection establishment, handshakes are exchanged. Because there is no handshaking, it provides lower latency for subsequent requests.
+- Without terminating the TCP connection, it reports problems.
+
+### Disadvantages of HTTP
+
+- It is applicable to point-to-point connections.
+- It isn’t mobile-friendly.
+- It uses far too many words.
+- It doesn’t provide trustworthy exchange (in the absence of retry mechanism).
+- When the client receives all the data it requires, the connection is not terminated. Therefore, the server won’t be accessible during this time.
+
+![alt text](../assets/HTTPSdrawio-660x368.png)
+
+## Hypertext Transfer Protocol Secure (HTTPS)
+
+- Hypertext Transfer Protocol Secure (HTTPS) is an extended version of the Hypertext Transfer Protocol (HTTP). It is used for secure communication.
+- In HTTPS, the communication protocol is encrypted using Transport Layer Security.
+- HTTPS can be defined as a secure variant of the HTTP protocol. Data can be transferred using this protocol in an encrypted format.
+- HTTPS protocol must be used while entering bank account information.
+- The HTTPS protocol is mostly utilised in situations when entering login credentials is necessary. Modern browsers like Chrome distinguish between the HTTP and HTTPS protocols based on distinct markings.
+- HTTPS employs an encryption mechanism called Secure Sockets Layer (SSL), also known as Transport Layer Security, to enable encryption.
+
+### Advantages of HTTPS
+
+- Provides in-transit data security.
+- Shields your website from data breaches, phishing, and MITM attacks.
+- Increases the visitors’ trust to your website.
+- Eliminates the “NOT Secure” alerts.
+- Assist you in raising your website’s ranking.
+
+### Disadvantages of HTTPS
+
+- When switching to HTTPS, an SSL certificate needs to be bought. Even though website hosts often give SSL certificates, these should be renewed annually by paying a charge.
+- Encrypting and decrypting data across HTTPS connections requires a lot of computation.
+- There will be issues with caching some information over HTTPS. Public caching of those that previously took place won’t happen again.
+- Certain proxy servers and firewalls prevent users from accessing HTTPS websites. Both deliberate and inadvertent actions might result from this.
+- If there are configuration issues, HTTP will be used by your website to obtain files rather than HTTPS.
+
+![alt text](<../assets/Screenshot (140).png>)
+
+## SSL/TLS
+
+SSL/TLS uses certificates to establish an encrypted link between a server and a client. This allows sensitive information like credit card details to be transmitted securely over the internet.
+
+The certificate contains a public key that authenticates the website’s identity and allows for encrypted data transfer through asymmetric, or public-key cryptography. The matching private key is kept secret on the server.
+
+### How Does SSL/TLS Work?
+
+SSL/TLS certificates authenticate identities and enable encrypted connections through the SSL/TLS handshake:
+
+1. The client requests access to a protected resource such as a login page.
+
+2. The server responds by sending its SSL certificate, including the public key.
+
+3. The client verifies that the certificate is valid and trusted. This ensures the server is authentic.
+
+4. The client generates a symmetric session key and encrypts it with the server’s public key. This securely transmits the session key to the server.
+
+5. The server decrypts the session key with its private key.
+
+6. Both parties use the symmetric session key to encrypt and decrypt all transmitted data.
+
+this handshake allows the two parties to negotiate an encrypted channel without sharing sensitive information over insecure channels. The encrypted session protects data in transit between the client and server.
+
+### SSL/TLS Encryption and Keys
+
+There are two types of encryption keys used in SSL/TLS:
+
+- **Asymmetric keys** – The public and private key pair are used to identify the server and initiate the encrypted session. The private key is known only to the server, while the public key is shared via a certificate.
+
+- **Symmetric session keys** – Disposable keys are generated for each connection and used to encrypt/decrypt transmitted data. The symmetric keys are securely exchanged using asymmetric encryption.
+
+SSL/TLS supports multiple symmetric ciphers and asymmetric public key algorithms. For example, AES with 128-bit keys is a common symmetric cipher, while RSA and ECC commonly use asymmetric algorithms.
