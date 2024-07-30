@@ -15,10 +15,10 @@ JavaScript is a [**weakly typed language**](https://www.geeksforgeeks.org/type-s
 
 JavaScript can be added to HTML file in [two ways](https://www.geeksforgeeks.org/where-to-put-javascript-in-an-html-document/):
 
-- \***\*Internal JS:\*\*** We can add JavaScript directly to our HTML file by writing the code inside the <script> tag. The <script> tag can either be placed inside the <head> or the <body> tag according to the requirement.
-- [\***\*External JS\*\***](https://www.geeksforgeeks.org/what-is-external-javascript/)\***\*:\*\*** We can write JavaScript code in another files having an extension.js and then link this file inside the <head> tag of the HTML file in which we want to add this code.
+- **Internal JS:** We can add JavaScript directly to our HTML file by writing the code inside the <script> tag. The <script> tag can either be placed inside the <head> or the <body> tag according to the requirement.
+- [**External JS**](https://www.geeksforgeeks.org/what-is-external-javascript/)\***\*:\*\*** We can write JavaScript code in another files having an extension.js and then link this file inside the <head> tag of the HTML file in which we want to add this code.
 
-\***\*Syntax:\*\***
+**Syntax:**
 
 <script>  
     // JavaScript Code  
@@ -28,7 +28,7 @@ JavaScript can be added to HTML file in [two ways](https://www.geeksforgeeks.org
 
 To know the type of a JavaScript variable, we can use the **typeof** operator.
 
-**1.Primitive types**
+**1. Primitive types**
 
 **String** \- It represents a series of characters and is written with quotes. A string can be represented using a single or a double quote.
 
