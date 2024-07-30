@@ -1313,3 +1313,84 @@ Client-side JavaScript is made up of two parts, a fundamental language and prede
 ![](https://d3n0h9tb65y8q.cloudfront.net/public_assets/assets/000/003/413/original/client-side_and_server-side.png?1654854025)
 
 Server-side JavaScript, involves the execution of JavaScript code on a server in response to client requests. It handles these requests and delivers the relevant response to the client, which may include client-side JavaScript for subsequent execution within the browser.
+
+### 33. What is globals in JavaScript?
+
+In JavaScript, "globals" refer to variables and functions that are accessible from any part of the code, regardless of where they are declared. These are part of the global scope.
+
+### Global Scope:
+
+- **Global Variables**: Variables declared outside of any function or block.
+- **Global Functions**: Functions declared outside of any function or block.
+- **Global Object Properties**: Properties of the global object (`window` in browsers, `global` in Node.js).
+
+### The Global Object:
+
+The global object provides access to global variables and functions. In a browser, this object is `window`. In Node.js, it’s `global`.
+
+### Examples:
+
+#### Global Variables
+
+**Declaration**:
+
+```javascript
+var globalVar = "I am global"; // Accessible anywhere
+
+function showGlobalVar() {
+  console.log(globalVar); // "I am global"
+}
+showGlobalVar();
+```
+
+**Implicit Globals**:
+
+```javascript
+function createGlobal() {
+  implicitGlobal = "I am also global"; // No var, let, or const: automatically global
+}
+createGlobal();
+console.log(implicitGlobal); // "I am also global"
+```
+
+#### Global Functions
+
+```javascript
+function globalFunction() {
+  console.log("I am a global function");
+}
+globalFunction(); // Accessible anywhere
+```
+
+#### Properties of the Global Object
+
+**Window Object in Browsers**:
+
+```javascript
+var globalVar = "I am global";
+console.log(window.globalVar); // "I am global"
+```
+
+**Global Object in Node.js**:
+
+```javascript
+global.globalVar = "I am global";
+console.log(global.globalVar); // "I am global"
+```
+
+### Best Practices:
+
+- **Avoid Polluting the Global Scope**: Minimize the use of global variables to avoid conflicts and potential bugs.
+- **Use `let` and `const`**: These keywords help avoid creating unintended globals, as they are block-scoped.
+
+### Example of Avoiding Global Scope Pollution
+
+```javascript
+(function () {
+  var localVar = "I am local";
+  console.log(localVar); // "I am local"
+})();
+console.log(localVar); // ReferenceError: localVar is not defined
+```
+
+Globals are useful for providing widely accessible variables and functions, but overusing them can lead to code that is hard to debug and maintain.
