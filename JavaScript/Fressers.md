@@ -205,9 +205,83 @@ var y = "2";
 
 ### 5\. Difference between var and let keyword in javascript.
 
-1. From the very beginning, the 'var' keyword was used in JavaScript programming **whereas the keyword** 'let' was just added in 2015.
-2. The keyword 'Var' has a function scope. Anywhere in the function, the variable specified using var is accessible but in ‘let’ the scope of a variable declared with the 'let' keyword is limited to the block in which it is declared. Let's start with a Block Scope.
-3. In ECMAScript 2015, let and const are hoisted but not initialized. Referencing the variable in the block before the variable declaration results in a ReferenceError because the variable is in a "temporal dead zone" from the start of the block until the declaration is processed.
+Certainly! Here are the differences between `let` and `var` in JavaScript, along with descriptions and examples:
+
+#### 1. Scope
+
+**Description**:
+
+- `var` is function-scoped, accessible throughout the function.
+- `let` is block-scoped, accessible only within the block where it's declared.
+
+**Example**:
+
+```javascript
+function scopeExample() {
+  if (true) {
+    var x = 10;
+    let y = 20;
+  }
+  console.log(x); // 10 - Accessible outside the block
+  console.log(y); // ReferenceError - y is not defined outside the block
+}
+
+scopeExample();
+```
+
+#### 2. Hoisting
+
+**Description**:
+
+- `var` is hoisted and initialized with `undefined`.
+- `let` is hoisted but not initialized, causing a `ReferenceError` if accessed before declaration.
+
+**Example**:
+
+```javascript
+console.log(a); // undefined - 'a' is hoisted
+var a = 5;
+
+console.log(b); // ReferenceError - Cannot access 'b' before initialization
+let b = 5;
+```
+
+#### 3. Re-declaration
+
+**Description**:
+
+- `var` allows re-declaration within the same scope.
+- `let` does not allow re-declaration within the same scope.
+
+**Example**:
+
+```javascript
+var c = 30;
+var c = 40;
+console.log(c); // 40 - Re-declaration allowed
+
+let d = 50;
+let d = 60; // SyntaxError - Identifier 'd' has already been declared
+```
+
+#### 4. Global Object Property
+
+**Description**:
+
+- `var` declarations in the global scope become properties of the global object (e.g., `window` in browsers).
+- `let` declarations in the global scope do not become properties of the global object.
+
+**Example**:
+
+```javascript
+var e = "globalVar";
+console.log(window.e); // "globalVar" - 'e' is a property of the global object
+
+let f = "globalLet";
+console.log(window.f); // undefined - 'f' is not a property of the global object
+```
+
+These examples demonstrate the distinctions between `let` and `var` in terms of scope, hoisting, re-declaration, and their behavior in the global context.
 
 ### 6\. Explain Implicit Type Coercion in javascript.
 
