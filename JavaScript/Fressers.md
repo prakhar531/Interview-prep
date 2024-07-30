@@ -1,6 +1,30 @@
 # JavaScript Interview Questions for Freshers
 
-## 1. What are the different data types present in javascript?
+## JavaScript
+
+\***\*JavaScript\*\*** is a **lightweight,** **cross-platform**, **single-threaded,** and **interpreted compiled** programming language. It is also known as the scripting language for webpages. It is well-known for the development of web pages, and many non-browser environments also use it.
+
+JavaScript is a [\***\*weakly typed language\*\***](https://www.geeksforgeeks.org/type-systemsdynamic-typing-static-typing-duck-typing/) \***\*(dynamically typed)\*\***. JavaScript can be used for [\***\*Client-side\*\***](https://www.geeksforgeeks.org/server-side-client-side-programming/) developments as well as [\***\*Server-side\*\***](https://www.geeksforgeeks.org/server-side-client-side-programming/) developments. JavaScript is both an imperative and declarative type of language. JavaScript contains a standard library of objects, like [\***\*Array\*\***](https://www.geeksforgeeks.org/arrays-in-javascript/), [\***\*Date\*\***](https://www.geeksforgeeks.org/javascript-date-objects/), and [\***\*Math\*\***](https://www.geeksforgeeks.org/javascript-math-object/), and a core set of language elements like [\***\*operators\*\***](https://www.geeksforgeeks.org/javascript-operators/), \***\*control structures\*\***, and [\***\*statements\*\***](https://www.geeksforgeeks.org/javascript-statements/).
+
+- \***\*Client-side:\*\*** It supplies objects to control a browser and its [Document Object Model (DOM).](https://www.geeksforgeeks.org/dom-document-object-model/) Like if client-side extensions allow an application to place elements on an HTML form and respond to user events such as \***\*mouse clicks\*\***, \***\*form input\*\***, and \***\*page navigation\*\***. Useful libraries for the client side are [\***\*AngularJS\*\***](https://www.geeksforgeeks.org/introduction-to-angularjs/), [\***\*ReactJS\*\***](https://www.geeksforgeeks.org/react-js-introduction-working/), [\***\*VueJS,\*\***](https://www.geeksforgeeks.org/vue-js/) and so many others.
+- \***\*Server-side:\*\*** It supplies objects relevant to running JavaScript on a server. For if the server-side extensions allow an application to communicate with a database, and provide continuity of information from one invocation to another of the application, or perform file manipulations on a server. The useful framework which is the most famous these days is [\***\*node.js\*\***](https://www.geeksforgeeks.org/introduction-to-nodejs/).
+- \***\*Imperative language –\*\*** In this type of language we are mostly concerned about how it is to be done. It simply controls the flow of computation. The procedural programming approach, object, oriented approach comes under this as async await we are thinking about what is to be done further after the async call.
+- \***\*Declarative programming –\*\*** In this type of language we are concerned about how it is to be done, basically here logical computation requires. Her main goal is to describe the desired result without direct dictation on how to get it as the arrow function does.
+
+## How to Link JavaScript File in HTML ?
+
+JavaScript can be added to HTML file in [two ways](https://www.geeksforgeeks.org/where-to-put-javascript-in-an-html-document/):
+
+- \***\*Internal JS:\*\*** We can add JavaScript directly to our HTML file by writing the code inside the <script> tag. The <script> tag can either be placed inside the <head> or the <body> tag according to the requirement.
+- [\***\*External JS\*\***](https://www.geeksforgeeks.org/what-is-external-javascript/)\***\*:\*\*** We can write JavaScript code in another files having an extension.js and then link this file inside the <head> tag of the HTML file in which we want to add this code.
+
+\***\*Syntax:\*\***
+
+<script>  
+    // JavaScript Code  
+</script>
+
+### 1. What are the different data types present in javascript?
 
 To know the type of a JavaScript variable, we can use the **typeof** operator.
 
@@ -105,27 +129,7 @@ var obj1 = {
 var array1 = [5, "Hello", true, 4.1];
 ```
 
-> #### **Note- It is important to remember that any data type that is not a primitive data type, is of Object type in javascript.**
-
-![](https://assets.interviewbit.com/assets/ibpp/interview_guides/assets/mobile/study_plan-bf1728cccc109be1b27549ae18f4571495aaa096b70f313c8232292849f9b07c.svg.gz) ![](https://assets.interviewbit.com/assets/ibpp/interview_guides/assets/desktop/study_plan-fb58ec94dd27940f470d62dee6d85c8161f6afc2b9dcbced18278212ce50b8b9.svg.gz)
-
-Create a free personalised study plan Create a FREE custom study plan
-
-Get into your dream companies with expert guidance
-
-Get into your dream companies with expert..
-
-![](https://assets.interviewbit.com/assets/ibpp/interview_guides/assets/code-99b8ddab28469d3e18187c7e7f62dcf921ece612e63043b7515547d441ea3ebb.svg.gz) Real-Life Problems
-
-![](https://assets.interviewbit.com/assets/ibpp/interview_guides/assets/suitcase-7129128344fb59d27c28914ce39a52b40df37b3da954c23330359726019a8fb7.svg.gz) Prep for Target Roles
-
-![](https://assets.interviewbit.com/assets/ibpp/interview_guides/assets/pencil-aaf6423aa93927b3965ae3006bc88653f14fee9586297e82fa1153ab475c8459.svg.gz) Custom Plan Duration
-
-![](https://assets.interviewbit.com/assets/ibpp/interview_guides/assets/calendar-blank-fd5b0a13bc91a3876224b83db892e456e05f669a469dbe4f3d62a6600836c79c.svg.gz) Flexible Plans
-
-[Create My Plan ![](https://assets.interviewbit.com/assets/ibpp/interview_guides/assets/arrow-right-54a813c1b9b6df712c72a314c89081e5a96674ee7ee6454dd7c063d0fe79bb1c.svg.gz)](https://www.interviewbit.com/interview-preparation-kit/)
-
-### 2\. Explain Hoisting in javascript.
+### 2\. Explain Hoisting in javascript?
 
 Hoisting is the default behaviour of javascript where all the variable and function declarations are moved on top.
 
@@ -183,17 +187,6 @@ var x;
 ### 3\. Why do we use the word “debugger” in javascript?
 
 The debugger for the browser must be activated in order to debug the code. Built-in debuggers may be switched on and off, requiring the user to report faults. The remaining section of the code should stop execution before moving on to the next line while debugging.
-
-You can download a PDF version of Javascript Interview Questions.
-
-![](https://assets.interviewbit.com/assets/ibpp/interview_guides/download_v2-f7bcad529b2845c93dddc78cd31acf9ecb098c42854a1757f0f8949950377c02.svg.gz)Download PDF[![](https://assets.interviewbit.com/assets/ibpp/interview_guides/download_v2-f7bcad529b2845c93dddc78cd31acf9ecb098c42854a1757f0f8949950377c02.svg.gz)Download PDF](<javascript:void(0)>)
-
-### Download PDF
-
----
-
-Your requested download is ready!  
-Click here to download.
 
 ### 4\. Difference between “ == “ and “ === “ operators.
 
@@ -537,28 +530,6 @@ function higherOrder2() {
 var x = higherOrder2();
 x(); // Returns "Do something"
 ```
-
-![](https://assets.interviewbit.com/assets/ibpp/interview_guides/assets/crt-cea7cf7a07e443deb6998f485c8eee606a6f7f78bb3a5ee75147a7b99041ff02.svg.gz)
-
-Discover your path to a   Discover your path to a   Successful Tech Career for FREE! Successful Tech Career!
-
-![](https://assets.interviewbit.com/assets/ibpp/interview_guides/assets/crt-cea7cf7a07e443deb6998f485c8eee606a6f7f78bb3a5ee75147a7b99041ff02.svg.gz)
-
-Answer 4 simple questions & get a career plan tailored for you
-
-Answer 4 simple questions & get a career plan tailored for you
-
-![](https://assets.interviewbit.com/assets/ibpp/interview_guides/assets/lightning-61e725996ba22705e4c4c78e15114d9039ce9f59ca2eaa143fb3c4b6e4b8b6b4.svg.gz) Interview Process
-
-![](https://assets.interviewbit.com/assets/ibpp/interview_guides/assets/bank-note-333a10ca381b3a93e9f5f80100496e82ddff5f996a8c77c3bb349cc5f7269878.svg.gz) CTC & Designation
-
-![](https://assets.interviewbit.com/assets/ibpp/interview_guides/assets/layout-alt-39a6b2a56b986dbae952a4e1a7fde9324f0bafeb365b03e4ecb507ff876531e0.svg.gz) Projects on the Job
-
-![](https://assets.interviewbit.com/assets/ibpp/interview_guides/assets/avatar-9a73d54bc74cf7d7b6c3be8b296a3530bc0ac0af8c72971946c5ac2b29a68dad.svg.gz) Referral System
-
-[Try It Out ![](https://assets.interviewbit.com/assets/ibpp/interview_guides/assets/arrow-right-54a813c1b9b6df712c72a314c89081e5a96674ee7ee6454dd7c063d0fe79bb1c.svg.gz)](https://www.scaler.com/career-plan?utm_source=ib&utm_medium=top_nudge&utm_campaign=CareerPlan)
-
-![](https://assets.interviewbit.com/assets/ibpp/interview_guides/assets/fire-ca2f5ca7edad22dee4de996dbd92aa96b1c5bd80aac97c343b537f57f2b0e622.svg.gz) 2 Lakh+ Roadmaps Created
 
 ### 13\. Explain “this” keyword.
 
