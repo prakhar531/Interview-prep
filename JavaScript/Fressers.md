@@ -572,14 +572,108 @@ From the definition of an IIFE, we know that our code should run as soon as it i
 
 ### 11\. What do you mean by strict mode in javascript and characteristics of javascript strict-mode?
 
-In ECMAScript 5, a new feature called JavaScript Strict Mode allows you to write a code or a function in a "strict" operational environment. In most cases, this language is 'not particularly severe' when it comes to throwing errors. In 'Strict mode,' however, all forms of errors, including silent errors, will be thrown. As a result, debugging becomes a lot simpler.  Thus programmer's chances of making an error are lowered.
+In ECMAScript 5, a new feature called JavaScript Strict Mode allows you to write a code or a function in a "strict" operational environment.
 
-Characteristics of strict mode in javascript
+Strict mode in JavaScript is a way to opt into a restricted variant of the language, which helps catch common coding errors and "unsafe" actions (such as gaining access to the global object). It is enabled by adding the string `"use strict";` at the beginning of a script or function.
 
-1. Duplicate arguments are not allowed by developers.
-2. In strict mode, you won't be able to use the JavaScript keyword as a parameter or function name.
-3. The 'use strict' keyword is used to define strict mode at the start of the script. Strict mode is supported by all browsers.
-4. Engineers will not be allowed to create global variables in 'Strict Mode.
+#### Key Features and Benefits of Strict Mode
+
+1. **Eliminates some silent errors**: Converts them to throw errors.
+2. **Fixes mistakes**: Helps avoid some common JavaScript pitfalls.
+3. **Prevents the use of potentially problematic syntax**.
+
+#### Examples of Strict Mode in Action
+
+#### 1. Enabling Strict Mode
+
+**Global Strict Mode**:
+
+```javascript
+"use strict";
+x = 3.14; // ReferenceError: x is not defined
+```
+
+**Function-level Strict Mode**:
+
+```javascript
+function strictFunction() {
+  "use strict";
+  y = 3.14; // ReferenceError: y is not defined
+}
+strictFunction();
+```
+
+#### 2. Preventing Accidental Globals
+
+Without strict mode:
+
+```javascript
+function noStrict() {
+  z = 3.14; // Implicitly creates a global variable
+}
+noStrict();
+console.log(z); // 3.14
+```
+
+With strict mode:
+
+```javascript
+function strictMode() {
+  "use strict";
+  a = 3.14; // ReferenceError: a is not defined
+}
+strictMode();
+```
+
+#### 3. Disallowing Duplicate Property Names
+
+Without strict mode:
+
+```javascript
+var obj = {
+  prop: "first",
+  prop: "second", // No error, last value overwrites the first
+};
+console.log(obj.prop); // "second"
+```
+
+With strict mode:
+
+```javascript
+"use strict";
+var obj = {
+  prop: "first",
+  prop: "second", // SyntaxError: Duplicate data property in object literal not allowed in strict mode
+};
+```
+
+#### 4. Catching Assignment to Non-writable Properties
+
+Without strict mode:
+
+```javascript
+var readOnly = {};
+Object.defineProperty(readOnly, "fixed", { value: 42, writable: false });
+readOnly.fixed = 99; // Fails silently
+console.log(readOnly.fixed); // 42
+```
+
+With strict mode:
+
+```javascript
+"use strict";
+var readOnly = {};
+Object.defineProperty(readOnly, "fixed", { value: 42, writable: false });
+readOnly.fixed = 99; // TypeError: Cannot assign to read-only property 'fixed'
+```
+
+### Benefits:
+
+- **Improves Code Quality**: Helps catch common mistakes early.
+- **Enhanced Security**: Prevents certain insecure actions.
+- **Future-proofing**: Encourages use of modern JavaScript practices.
+
+Strict mode is a useful tool for writing robust, error-free code by enforcing stricter parsing and error handling in your JavaScript code.
 
 ### 12\. Explain Higher Order Functions in javascript.
 
