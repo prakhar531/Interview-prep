@@ -54,9 +54,37 @@ const setCount = () => {
    setOtherStuffs(...);
    ...
 };
+
+
+// Updating
+// Objects
+const [state, setState] = useState({ name: 'John', age: 30 });
+
+const updateName = () => {
+  setState({ ...state, name: 'Jane' });
+};
+
+const updateAge = () => {
+  setState({ ...state, age: state.age + 1 });
+};
+
+// Arrays
+const [array, setArray] = useState([1, 2, 3, 4, 5]);
+
+const addItem = () => {
+  setArray([...array, 6]);
+};
+
+const removeItem = () => {
+  setArray(array.slice(0, array.length - 1));
+};
 ```
 
 We can make use of setCounter() method for updating the state of count anywhere. In this example, we are using setCounter() inside the setCount function where various other things can also be done. The idea with the usage of hooks is that we will be able to keep our code more functional and avoid class-based components if they are not required.
+
+As stated previously, useState enables you to add state to function components. Calling React.useState inside a function component generates a single piece of state associated with that component.
+
+Whereas the state in a class is always an object, with Hooks, the state can be any type. Each piece of state holds a single value: an object, an array, a Boolean, or any other type you can imagine.
 
 ### 5\. What are keys in React?
 
